@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet  
+metadata: # Dictionary
+  name: myapp2-rs
+spec: # Dictionary
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: myapp2
+  template:
+    metadata: # Dictionary
+      name: myapp2-pod
+      labels:
+        app: myapp2 # Key Value Pairs   
+    spec:
+      containers: # List
+        - name: myapp2-container
+          image: us-central1-docker.pkg.dev/laboratorio-oct-devoteam/angelgke/webpage:449af98
+          ports: 
+            - containerPort: 80          
+
+
+##https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/

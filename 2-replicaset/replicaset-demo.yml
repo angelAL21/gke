@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-helloworld-rs
+  labels:
+    app: my-helloworld
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: my-helloworld
+  template:
+    metadata:
+      labels:
+        app: my-helloworld
+    spec:
+      containers:
+      - name: my-helloworld-app
+        image:  us-central1-docker.pkg.dev/laboratorio-oct-devoteam/angelgke/webpage:449af98

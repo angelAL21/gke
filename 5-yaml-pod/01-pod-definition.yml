@@ -1,0 +1,15 @@
+apiVersion: v1 # String
+kind: Pod # String
+metadata: # Dictionary
+  name: myapp-pod
+  labels: # Dictionary
+    app: myapp # Key Value Pairs
+spec:
+  containers: # List
+    - name: myapp
+      image: us-central1-docker.pkg.dev/laboratorio-oct-devoteam/angelgke/webpage:449af98
+      ports: # List
+        - containerPort: 80
+
+
+##https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/
